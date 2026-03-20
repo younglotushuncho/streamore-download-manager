@@ -1,0 +1,100 @@
+﻿[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/app/backend/app.py", line 28, in <module>
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    from backend.downloader import get_manager
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/app/backend/downloader.py", line 15, in <module>
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    import requests
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]ModuleNotFoundError: No module named 'requests'
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]No module named 'requests'
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:14 +0000] [669] [INFO] Worker exiting (pid: 669)
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:14 +0000] [656] [ERROR] Worker (pid:669) exited with code 3.
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:14 +0000] [656] [ERROR] Shutting down: Master
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:14 +0000] [656] [ERROR] Reason: Worker failed to boot.
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Main child exited normally with code: 3
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Umounting /dev/vdc from /app/data
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T10:42:14Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][33m WARN[0m hallpass exited, pid: 657, status: exit status: 0
+[2m2026-03-06T10:42:15Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]2026/03/06 10:42:15 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:564:ab21:a639:2]:22
+[2m2026-03-06T10:42:15Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T10:42:16Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][    4.505208] reboot: Restarting system
+[2m2026-03-06T10:42:47Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]2026-03-06T10:42:47.969781359 [01KK1BQJR8E4P2W8AEBAHXC5CY:main] Running Firecracker v1.12.1
+[2m2026-03-06T10:42:47Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]2026-03-06T10:42:47.969970747 [01KK1BQJR8E4P2W8AEBAHXC5CY:main] Listening on API socket ("/fc.sock").
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Starting init (commit: 350f2667)...
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Checking filesystem on /app/data
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]/dev/vdc: clean, 14/64512 files, 8794/258048 blocks
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Mounting /dev/vdc at /app/data w/ uid: 0, gid: 0 and chmod 0755
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Resized /app/data to 1056964608 bytes
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Preparing to run: `/entrypoint.sh` as root
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m [fly api proxy] listening at /.fly/api
+[2m2026-03-06T10:42:48Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][entrypoint] Starting aria2 RPC on 127.0.0.1:6800 ...
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][entrypoint] aria2 started.
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][entrypoint] Starting gunicorn on 0.0.0.0:5000 ...
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]2026/03/06 10:42:49 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:564:ab21:a639:2]:22
+[2m2026-03-06T10:42:49Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Machine started in 2.455s
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:49 +0000] [657] [INFO] Starting gunicorn 25.1.0
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:49 +0000] [657] [INFO] Listening at: http://0.0.0.0:5000 (657)
+[2m2026-03-06T10:42:49Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:49 +0000] [657] [INFO] Using worker: geventwebsocket.gunicorn.workers.GeventWebSocketWorker
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [657] [INFO] Control socket listening at /app/gunicorn.ctl
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [670] [INFO] Booting worker with pid: 670
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [670] [ERROR] Exception in worker process
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]Traceback (most recent call last):
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/arbiter.py", line 708, in spawn_worker
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    worker.init_process()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/ggevent.py", line 143, in init_process
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    super().init_process()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 136, in init_process
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    self.load_wsgi()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    self.wsgi = self.app.wsgi()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]                ^^^^^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    self.callable = self.load()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]                    ^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    return self.load_wsgiapp()
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]           ^^^^^^^^^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    return util.import_app(self.app_uri)
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/site-packages/gunicorn/util.py", line 377, in import_app
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    mod = importlib.import_module(module)
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/usr/local/lib/python3.11/importlib/__init__.py", line 126, in import_module
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    return _bootstrap._gcd_import(name[level:], package, level)
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/app/backend/app.py", line 28, in <module>
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    from backend.downloader import get_manager
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]  File "/app/backend/downloader.py", line 15, in <module>
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]    import requests
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]ModuleNotFoundError: No module named 'requests'
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]No module named 'requests'
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [670] [INFO] Worker exiting (pid: 670)
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [657] [ERROR] Worker (pid:670) exited with code 3.
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [657] [ERROR] Shutting down: Master
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][2026-03-06 10:42:50 +0000] [657] [ERROR] Reason: Worker failed to boot.
+[2m2026-03-06T10:42:50Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Main child exited normally with code: 3
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][32m INFO[0m Umounting /dev/vdc from /app/data
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][33m WARN[0m hallpass exited, pid: 658, status: exit status: 0
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m]2026/03/06 10:42:51 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:564:ab21:a639:2]:22
+[2m2026-03-06T10:42:51Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T10:42:52Z[0m app[8e795eb7790098] [32mord[0m [[34minfo[0m][    4.534776] reboot: Restarting system
+[2m2026-03-06T10:42:57Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]machine has reached its max restart count of 10
+[2m2026-03-06T10:47:43Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Pulling container image registry.fly.io/movie-project-backend@sha256:d47fda181ad34e778ef85d164f4b32c8b0eb9ade736fb182fbf97197d6ee036f
+[2m2026-03-06T10:47:43Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Container image registry.fly.io/movie-project-backend@sha256:d47fda181ad34e778ef85d164f4b32c8b0eb9ade736fb182fbf97197d6ee036f already prepared
+[2m2026-03-06T10:47:43Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Setting up volume 'movie_data'
+[2m2026-03-06T10:47:43Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Opening encrypted volume
+[2m2026-03-06T10:47:48Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]Configuring firecracker
+[2m2026-03-06T10:47:51Z[0m runner[8e795eb7790098] [32mord[0m [[34minfo[0m]machine was in a non-started state prior to the update so leaving the new version stopped

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: streamore-backend
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: FLASK_HOST
+        value: "0.0.0.0"
+      - key: FLASK_PORT
+        value: "5000"
+      - key: FLASK_DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ARIA2_RPC_SECRET
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "*"

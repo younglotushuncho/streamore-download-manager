@@ -1,0 +1,19 @@
+# Frontend Requirements
+# Install with: pip install -r frontend/requirements.txt
+
+# Desktop GUI
+# Keep PyQt6 and its Qt runtime in sync. Updated to match the environment.
+PyQt6==6.10.2
+PyQt6-Qt6==6.10.2
+
+# HTTP client
+requests==2.31.0
+
+# Notifications
+plyer==2.1.0
+
+# Utilities
+Pillow==10.1.0
+
+# Process management for auto-updater
+psutil==5.9.8

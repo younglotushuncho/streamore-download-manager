@@ -1,0 +1,11 @@
+{
+  "version": "1.0.1-hotfix",
+  "assets": [
+    {
+      "name": "MovieApp-1.0.1-hotfix.zip",
+      "url": "https://github.com/younglotushuncho/moviedownloader/releases/download/v1.0.1-hotfix/MovieApp-1.0.1-hotfix.zip",
+      "sha256": "f8283b6022e497d4d2ce761a351c5ebbf1c49af878b813c5b40850fff0a0243d"
+    }
+  ],
+  "signature": "fd9e2f1c03549700cb43d73d7e2b37668125e7a71228803ee7fcaf43b063c180"
+}

@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-card: #12121a;
+  --bg-card-hover: #1a1a28;
+  --accent: #6c63ff;
+  --accent-hover: #5b52e3;
+  --accent-glow: rgba(108, 99, 255, 0.3);
+  --text-primary: #f0f0f8;
+  --text-secondary: #8888aa;
+  --border: rgba(255,255,255,0.08);
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f3f5;
+  --accent: #6c63ff;
+  --accent-hover: #5b52e3;
+  --accent-glow: rgba(108, 99, 255, 0.2);
+  --text-primary: #1a1a2e;
+  --text-secondary: #5a5a7a;
+  --border: rgba(0,0,0,0.1);
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(108,99,255,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(108,99,255,0.7); }
+
+/* Animations */
+@keyframes fadeIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse-glow { 0%,100% { box-shadow: 0 0 8px var(--accent-glow); } 50% { box-shadow: 0 0 24px var(--accent-glow); } }
+
+.animate-fade-in { animation: fadeIn 0.4s ease forwards; }
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, #1a1a28 25%, #22222f 50%, #1a1a28 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Card hover glow */
+.card-glow:hover {
+  box-shadow: 0 8px 32px rgba(108, 99, 255, 0.2), 0 0 0 1px rgba(108,99,255,0.15);
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+  .nav-content { display: none !important; }
+  .mobile-toggle { display: block !important; }
+}
+
+@media (max-width: 600px) {
+  .nav-banner { display: none !important; }
+}

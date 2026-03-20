@@ -1,0 +1,119 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+/downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+data/movies.db
+*.log
+KEEP_THIS_SECRET.txt
+temp_manifest/
+packaging/BUILD_TEST.md
+
+# Build outputs
+build/
+dist/
+data/api_cache/
+
+# Database files (runtime data — use Fly volume in production)
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Poster image cache (large binaries, regenerated at runtime)
+data/cache/
+
+# Logs
+*.log
+aria2_*.log
+backend_start.log
+
+# Frontend deps + build cache
+web/node_modules/
+web/.next/
+web/.next/
+
+# Fly.io + Docker local overrides
+fly.secrets
+
+# Windows executables bundled locally
+aria2c.exe
+bin/aria2c.exe
+bin/
+
+# Local build artifacts and tools
+dist_final/
+dist_test/
+dist_test2/
+test_nuitka.build/
+test_nuitka.dist/
+ghcli/
+gh.zip
+hello.c
+hello.exe
+hello_ccache.exe
+nuitka-crash-report.xml
+packaging/TestCert.pfx
+packaging/pyinstaller-source/
+test_nuitka.py
+tmp_public_repo2/
+tmp_search_repo.py
+
+# Temp folders
+tmp/
+temp_download/
+/downloads/

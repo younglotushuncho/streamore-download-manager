@@ -1,0 +1,126 @@
+﻿name: Publish Public Installer
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  publish-installer:
+    runs-on: windows-latest
+
+    steps:
+      - name: Validate required secrets
+        shell: pwsh
+        run: |
+          if (-not "${{ secrets.R2_ACCOUNT_ID }}") { throw "Missing secret: R2_ACCOUNT_ID" }
+          if (-not "${{ secrets.R2_ACCESS_KEY_ID }}") { throw "Missing secret: R2_ACCESS_KEY_ID" }
+          if (-not "${{ secrets.R2_SECRET_ACCESS_KEY }}") { throw "Missing secret: R2_SECRET_ACCESS_KEY" }
+          if (-not "${{ secrets.R2_BUCKET }}") { throw "Missing secret: R2_BUCKET" }
+          if (-not "${{ secrets.R2_PUBLIC_BASE_URL }}") { throw "Missing secret: R2_PUBLIC_BASE_URL" }
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~\AppData\Local\pip\Cache
+            ~\.cache\pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache Nuitka
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~\AppData\Local\Nuitka\Cache
+            ~\.cache\Nuitka
+          key: ${{ runner.os }}-nuitka-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-nuitka-
+
+      - name: Install build dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install nuitka awscli
+          if (Test-Path backend/requirements.txt) { pip install -r backend/requirements.txt }
+          if (Test-Path desktop/requirements.txt) { pip install -r desktop/requirements.txt }
+          choco install innosetup --yes --no-progress
+
+      - name: Download Aria2 binary
+        shell: pwsh
+        run: |
+          mkdir bin -ErrorAction SilentlyContinue
+          if (-not (Test-Path "bin/aria2c.exe")) {
+            Write-Host "Downloading aria2c.exe..."
+            Invoke-WebRequest -Uri "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip" -OutFile "aria2.zip"
+            Expand-Archive -Path "aria2.zip" -DestinationPath "temp_aria2" -Force
+            Move-Item "temp_aria2/aria2-1.37.0-win-64bit-build1/aria2c.exe" "bin/aria2c.exe" -Force
+            Remove-Item -Recurse -Force "temp_aria2", "aria2.zip"
+          }
+
+      - name: Read app version
+        id: version
+        shell: pwsh
+        run: |
+          $ver = (Get-Content shared/version.py | Select-String '__version__\s*=\s*"(.+)"').Matches.Groups[1].Value
+          if (-not $ver) { $ver = "0.0.0" }
+          echo "APP_VERSION=$ver" >> $env:GITHUB_OUTPUT
+
+      - name: Build installer (Nuitka)
+        shell: pwsh
+        run: |
+          ./packaging/build_nuitka.ps1
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" packaging/installer.iss
+          if (-not (Test-Path "dist/StreamoreSetup.exe")) {
+            throw "Installer build failed: dist/StreamoreSetup.exe not found"
+          }
+
+      - name: Write latest.json
+        shell: pwsh
+        env:
+          R2_PUBLIC_BASE_URL: ${{ secrets.R2_PUBLIC_BASE_URL }}
+        run: |
+          $ver = "${{ steps.version.outputs.APP_VERSION }}"
+          $base = $env:R2_PUBLIC_BASE_URL.TrimEnd('/')
+          if (-not $base) { throw "R2_PUBLIC_BASE_URL is empty" }
+          $url = "$base/StreamoreSetup.exe"
+          $sha = (Get-FileHash "dist/StreamoreSetup.exe" -Algorithm SHA256).Hash
+          $payload = @{
+            version = $ver
+            download_url = $url
+            sha256 = $sha
+            published_at = (Get-Date).ToString("o")
+          } | ConvertTo-Json -Depth 3
+          $payload | Out-File -Encoding utf8 dist/latest.json
+          if (-not (Test-Path "dist/latest.json")) { throw "latest.json not created" }
+
+      - name: Upload to R2
+        shell: pwsh
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $endpoint = "https://$env:R2_ACCOUNT_ID.r2.cloudflarestorage.com"
+          if (-not $env:R2_BUCKET) { throw "Missing R2_BUCKET" }
+          $env:AWS_ACCESS_KEY_ID = $env:R2_ACCESS_KEY_ID
+          $env:AWS_SECRET_ACCESS_KEY = $env:R2_SECRET_ACCESS_KEY
+          $env:AWS_DEFAULT_REGION = "auto"
+          aws s3 cp "dist/StreamoreSetup.exe" "s3://$env:R2_BUCKET/StreamoreSetup.exe" --endpoint-url $endpoint
+          aws s3 cp "dist/latest.json" "s3://$env:R2_BUCKET/latest.json" --endpoint-url $endpoint --cache-control "no-cache"
+          Write-Output "Uploaded StreamoreSetup.exe and latest.json to R2 bucket $env:R2_BUCKET"

@@ -1,0 +1,100 @@
+﻿[2m2026-03-06T11:44:35Z[0m health[82d332b7105448] [32mord[0m [[31merror[0m]Health check 'servicecheck-00-http-5000' on port 5000 has failed. Your app is not responding properly. Services exposed on ports [80, 443] will have intermittent failures until the health check passes.
+[2m2026-03-06T11:44:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:44:35 +0000] [657] [INFO] Starting gunicorn 25.1.0
+[2m2026-03-06T11:44:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:44:35 +0000] [657] [INFO] Listening at: http://0.0.0.0:5000 (657)
+[2m2026-03-06T11:44:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:44:35 +0000] [657] [INFO] Using worker: geventwebsocket.gunicorn.workers.GeventWebSocketWorker
+[2m2026-03-06T11:44:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:44:35 +0000] [670] [INFO] Booting worker with pid: 670
+[2m2026-03-06T11:44:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:44:35 +0000] [657] [INFO] Control socket listening at /app/gunicorn.ctl
+[2m2026-03-06T11:44:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:36,657 - backend.database - INFO - Database initialized at /app/data/movies.db
+[2m2026-03-06T11:44:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:36,658 - backend.scraper - INFO - YTSScraper initialized with base URL: https://yts.bz
+[2m2026-03-06T11:44:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:36,658 - backend.poster_cache - INFO - PosterCache initialized: /app/data/cache/posters (max 500MB)
+[2m2026-03-06T11:44:37Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:37,993 - backend.downloader - INFO - Starting aria2c: /usr/bin/aria2c --enable-rpc --rpc-listen-all=false --rpc-allow-origin-all --rpc-listen-port=6800 --max-overall-download-limit=0 --max-overall-upload-limit=0 --max-download-limit=0 --max-upload-limit=0 --split=16 --max-connection-per-server=16 --min-split-size=1M --max-concurrent-downloads=5 --listen-port=6881-6999 --enable-dht=true --dht-listen-port=6881-6999 --enable-dht6=false --enable-peer-exchange=true --bt-max-peers=0 --bt-request-peer-speed-limit=10M --bt-tracker-connect-timeout=10 --bt-tracker-timeout=60 --bt-tracker-interval=15 --bt-prioritize-piece=head,tail --seed-ratio=0.0 --seed-time=0 --file-allocation=falloc --dir=/app/downloads --rpc-secret=aria_secure_link_99
+[2m2026-03-06T11:44:38Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:38,006 - backend.downloader - INFO - aria2c process started (pid=673)
+[2m2026-03-06T11:44:39Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:39,973 - backend.downloader - ERROR - aria2c process exited unexpectedly while starting
+[2m2026-03-06T11:44:39Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:39,973 - backend.downloader - ERROR - aria2 RPC did not respond after starting aria2c
+[2m2026-03-06T11:44:39Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:39,974 - backend.downloader - INFO - Starting aria2 poll loop (interval=5s)
+[2m2026-03-06T11:44:39Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:39,975 - backend.app - INFO - aria2 manager initialized
+[2m2026-03-06T11:44:39Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:44:39,993 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:44:39] "GET /api/health HTTP/1.1" 200 202 0.001769
+[2m2026-03-06T11:44:40Z[0m health[82d332b7105448] [32mord[0m [[34minfo[0m]Health check 'servicecheck-00-http-5000' on port 5000 is now passing.
+[2m2026-03-06T11:45:10Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:45:10,002 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:45:10] "GET /api/health HTTP/1.1" 200 202 0.001146
+[2m2026-03-06T11:45:40Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:45:40,006 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:45:40] "GET /api/health HTTP/1.1" 200 202 0.001036
+[2m2026-03-06T11:46:10Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:46:10,010 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:46:10] "GET /api/health HTTP/1.1" 200 202 0.000758
+[2m2026-03-06T11:46:40Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:46:40,014 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:46:40] "GET /api/health HTTP/1.1" 200 202 0.000903
+[2m2026-03-06T11:47:10Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:47:10,018 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:47:10] "GET /api/health HTTP/1.1" 200 202 0.000657
+[2m2026-03-06T11:47:40Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:47:40,022 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:47:40] "GET /api/health HTTP/1.1" 200 202 0.000724
+[2m2026-03-06T11:47:52Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026/03/06 11:47:52 INFO New SSH session email=tapiwachekanyanza10@gmail.com verified=true
+[2m2026-03-06T11:47:53Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026/03/06 11:47:53 ERROR unexpected error executing command error="exec: \"ps\": executable file not found in $PATH"
+[2m2026-03-06T11:48:10Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:48:10,027 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:48:10] "GET /api/health HTTP/1.1" 200 202 0.000814
+[2m2026-03-06T11:48:40Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:48:40,031 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:48:40] "GET /api/health HTTP/1.1" 200 202 0.000536
+[2m2026-03-06T11:49:10Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:49:10,035 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:49:10] "GET /api/health HTTP/1.1" 200 202 0.000510
+[2m2026-03-06T11:49:34Z[0m runner[82d332b7105448] [32mord[0m [[33mwarn[0m]Trial machine stopping. To run for longer than 5m0s, add a credit card by visiting https://fly.io/trial.
+[2m2026-03-06T11:49:34Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Sending signal SIGINT to main child process w/ PID 657
+[2m2026-03-06T11:49:34Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:49:34 +0000] [657] [INFO] Handling signal: int
+[2m2026-03-06T11:49:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:49:35 +0000] [670] [INFO] Worker exiting (pid: 670)
+[2m2026-03-06T11:49:35Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:49:35 +0000] [657] [INFO] Shutting down: Master
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Main child exited normally with code: 0
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Umounting /dev/vdc from /app/data
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][33m WARN[0m hallpass exited, pid: 658, status: exit status: 0
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026/03/06 11:49:36 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:17a:4a87:8376:2]:22
+[2m2026-03-06T11:49:36Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T11:49:37Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][  303.871584] reboot: Restarting system
+[2m2026-03-06T11:58:22Z[0m proxy[82d332b7105448] [32mord[0m [[34minfo[0m]Starting machine
+[2m2026-03-06T11:58:22Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06T11:58:22.786426617 [01KK1FDBA5WXEB2TX9V5VHB8ZV:main] Running Firecracker v1.12.1
+[2m2026-03-06T11:58:22Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06T11:58:22.786558070 [01KK1FDBA5WXEB2TX9V5VHB8ZV:main] Listening on API socket ("/fc.sock").
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Starting init (commit: 350f2667)...
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Checking filesystem on /app/data
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]/dev/vdc: clean, 15/64512 files, 8854/258048 blocks
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Mounting /dev/vdc at /app/data w/ uid: 0, gid: 0 and chmod 0755
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Resized /app/data to 1056964608 bytes
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Preparing to run: `/entrypoint.sh` as root
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m [fly api proxy] listening at /.fly/api
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][entrypoint] Starting aria2 RPC on 127.0.0.1:6800 ...
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][entrypoint] aria2 started.
+[2m2026-03-06T11:58:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][entrypoint] Starting gunicorn on 0.0.0.0:5000 ...
+[2m2026-03-06T11:58:24Z[0m runner[82d332b7105448] [32mord[0m [[34minfo[0m]Machine started in 1.275s
+[2m2026-03-06T11:58:24Z[0m proxy[82d332b7105448] [32mord[0m [[34minfo[0m]machine started in 1.43798491s
+[2m2026-03-06T11:58:24Z[0m health[82d332b7105448] [32mord[0m [[31merror[0m]Health check 'servicecheck-00-http-5000' on port 5000 has failed. Your app is not responding properly. Services exposed on ports [80, 443] will have intermittent failures until the health check passes.
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026/03/06 11:58:24 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:17a:4a87:8376:2]:22
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:58:24 +0000] [658] [INFO] Starting gunicorn 25.1.0
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:58:24 +0000] [658] [INFO] Listening at: http://0.0.0.0:5000 (658)
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:58:24 +0000] [658] [INFO] Using worker: geventwebsocket.gunicorn.workers.GeventWebSocketWorker
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:58:24 +0000] [658] [INFO] Control socket listening at /app/gunicorn.ctl
+[2m2026-03-06T11:58:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 11:58:24 +0000] [669] [INFO] Booting worker with pid: 669
+[2m2026-03-06T11:58:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:25,688 - backend.database - INFO - Database initialized at /app/data/movies.db
+[2m2026-03-06T11:58:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:25,689 - backend.scraper - INFO - YTSScraper initialized with base URL: https://yts.bz
+[2m2026-03-06T11:58:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:25,689 - backend.poster_cache - INFO - PosterCache initialized: /app/data/cache/posters (max 500MB)
+[2m2026-03-06T11:58:27Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:27,007 - backend.downloader - INFO - Starting aria2c: /usr/bin/aria2c --enable-rpc --rpc-listen-all=false --rpc-allow-origin-all --rpc-listen-port=6800 --max-overall-download-limit=0 --max-overall-upload-limit=0 --max-download-limit=0 --max-upload-limit=0 --split=16 --max-connection-per-server=16 --min-split-size=1M --max-concurrent-downloads=5 --listen-port=6881-6999 --enable-dht=true --dht-listen-port=6881-6999 --enable-dht6=false --enable-peer-exchange=true --bt-max-peers=0 --bt-request-peer-speed-limit=10M --bt-tracker-connect-timeout=10 --bt-tracker-timeout=60 --bt-tracker-interval=15 --bt-prioritize-piece=head,tail --seed-ratio=0.0 --seed-time=0 --file-allocation=falloc --dir=/app/downloads --rpc-secret=aria_secure_link_99
+[2m2026-03-06T11:58:27Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:27,023 - backend.downloader - INFO - aria2c process started (pid=672)
+[2m2026-03-06T11:58:28Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:28,988 - backend.downloader - ERROR - aria2c process exited unexpectedly while starting
+[2m2026-03-06T11:58:28Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:28,988 - backend.downloader - ERROR - aria2 RPC did not respond after starting aria2c
+[2m2026-03-06T11:58:28Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:28,988 - backend.downloader - INFO - Starting aria2 poll loop (interval=5s)
+[2m2026-03-06T11:58:28Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:28,990 - backend.app - INFO - aria2 manager initialized
+[2m2026-03-06T11:58:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:29,006 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:58:29] "GET /api/health HTTP/1.1" 200 202 0.001909
+[2m2026-03-06T11:58:29Z[0m health[82d332b7105448] [32mord[0m [[34minfo[0m]Health check 'servicecheck-00-http-5000' on port 5000 is now passing.
+[2m2026-03-06T11:58:29Z[0m proxy[82d332b7105448] [32mord[0m [[34minfo[0m]waiting for machine to be reachable on 0.0.0.0:5000 (waited 5.391460896s so far)
+[2m2026-03-06T11:58:29Z[0m proxy[82d332b7105448] [32mord[0m [[34minfo[0m]machine became reachable in 5.392803313s
+[2m2026-03-06T11:58:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:29,405 - geventwebsocket.handler - INFO - 172.16.0.218 - - [2026-03-06 11:58:29] "GET / HTTP/1.1" 404 331 0.000810
+[2m2026-03-06T11:58:30Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:30,626 - geventwebsocket.handler - INFO - 172.16.0.218 - - [2026-03-06 11:58:30] "GET /favicon.ico HTTP/1.1" 404 331 0.000712
+[2m2026-03-06T11:58:59Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:58:59,010 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:58:59] "GET /api/health HTTP/1.1" 200 202 0.000715
+[2m2026-03-06T11:59:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:59:29,014 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:59:29] "GET /api/health HTTP/1.1" 200 202 0.000695
+[2m2026-03-06T11:59:59Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 11:59:59,019 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 11:59:59] "GET /api/health HTTP/1.1" 200 202 0.000729
+[2m2026-03-06T12:00:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:00:29,023 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:00:29] "GET /api/health HTTP/1.1" 200 202 0.000901
+[2m2026-03-06T12:00:59Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:00:59,026 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:00:59] "GET /api/health HTTP/1.1" 200 202 0.000931
+[2m2026-03-06T12:01:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:01:29,029 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:01:29] "GET /api/health HTTP/1.1" 200 202 0.000545
+[2m2026-03-06T12:01:59Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:01:59,033 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:01:59] "GET /api/health HTTP/1.1" 200 202 0.000658
+[2m2026-03-06T12:02:29Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:02:29,036 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:02:29] "GET /api/health HTTP/1.1" 200 202 0.000681
+[2m2026-03-06T12:02:59Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026-03-06 12:02:59,040 - geventwebsocket.handler - INFO - 172.19.0.217 - - [2026-03-06 12:02:59] "GET /api/health HTTP/1.1" 200 202 0.000668
+[2m2026-03-06T12:03:23Z[0m runner[82d332b7105448] [32mord[0m [[33mwarn[0m]Trial machine stopping. To run for longer than 5m0s, add a credit card by visiting https://fly.io/trial.
+[2m2026-03-06T12:03:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Sending signal SIGINT to main child process w/ PID 658
+[2m2026-03-06T12:03:23Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 12:03:23 +0000] [658] [INFO] Handling signal: int
+[2m2026-03-06T12:03:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 12:03:24 +0000] [669] [INFO] Worker exiting (pid: 669)
+[2m2026-03-06T12:03:24Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][2026-03-06 12:03:24 +0000] [658] [INFO] Shutting down: Master
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Main child exited normally with code: 0
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][32m INFO[0m Umounting /dev/vdc from /app/data
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][33m WARN[0m hallpass exited, pid: 656, status: exit status: 0
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m]2026/03/06 12:03:25 INFO SSH listening listen_address=[fdaa:4d:167f:a7b:17a:4a87:8376:2]:22
+[2m2026-03-06T12:03:25Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][31mERROR[0m error umounting /app/data: EBUSY: Device or resource busy, retrying in a bit
+[2m2026-03-06T12:03:26Z[0m app[82d332b7105448] [32mord[0m [[34minfo[0m][  303.868128] reboot: Restarting system

@@ -1,0 +1,31 @@
+
+--- Testing URL: https://yts.bz/browse-movies/0/all/all/0/latest/2010/en ---
+Status: 200
+Found 20 movie cards.
+ [1] Night Drive (2010)
+ [2] The Way I See It (2010)
+ [3] Animusic HD (2010)
+ [4] Snowblind (2010)
+ [5] Barney: Egg-Cellent Adventures (2010)
+
+--- Testing URL: https://yts.bz/browse-movies/0/all/all/0/latest/2024/en ---
+Status: 200
+Found 20 movie cards.
+ [1] Horny Teenagers Must Die! (2024)
+ [2] Crowdsource Murder (2024)
+ [3] The Wrong Life Coach (2024)
+ [4] Eric André Live Near Broadway (2024)
+ [5] Zero (2024)
+
+--- Testing URL: https://yts.bz/browse-movies/0/720p/all/0/latest/2024/en ---
+Status: 200
+Found 20 movie cards.
+ [1] Horny Teenagers Must Die! (2024)
+ [2] Crowdsource Murder (2024)
+ [3] The Wrong Life Coach (2024)
+ [4] Eric André Live Near Broadway (2024)
+ [5] Zero (2024)
+
+--- Testing URL: https://yts.bz/browse-movies/all/all/0/latest/2024/en ---
+Status: 200
+Found 0 movie cards.

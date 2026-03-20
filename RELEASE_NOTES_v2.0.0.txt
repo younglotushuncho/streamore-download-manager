@@ -1,0 +1,18 @@
+## What's New in v2.0.0
+
+### New Features
+- On-disk API response cache — app stays functional when backend is unreachable
+- Robust download-list fetching (tolerates cached & alternate response formats)
+
+### Changes
+- chore(release): bump version to v2.0.0 (9125dac)
+- frontend: add on-disk API cache and robust get_downloads (31b9f27)
+- chore(release): update manifest with re-generated patch_v1.0.17 (includes version.py) (cce9c9f)
+- chore(release): bump version to 1.0.17; fix manifest assets to point to v1.0.17 installer (f3a2cfa)
+
+---
+### Download
+| File | Description |
+|------|-------------|
+| `StreamoreMonitor-2.0.0-Setup.exe` | Windows installer (recommended) |
+| `StreamoreMonitor.exe` | Portable single-file executable |

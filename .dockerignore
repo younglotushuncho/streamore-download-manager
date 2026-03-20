@@ -1,0 +1,64 @@
+# ── Docker ignore ─────────────────────────────────────────────────
+# Excludes dev files, test artefacts, and Windows-only binaries
+# so the Docker image stays small and secure.
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Python caches / virtual envs
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+env/
+.venv/
+
+# Test & debug files
+tests/
+*.test.py
+test_*.py
+pytest_cache/
+.pytest_cache/
+*.log
+*.txt
+*.md
+debug_*.py
+check_*.py
+inspect_*.py
+_dump_*.py
+_inspect_*.py
+diag_*.py
+
+# Frontend source (not needed in Docker; deployed to Vercel)
+web/
+frontend/
+
+# Windows executables included in repo
+aria2c.exe
+*.bat
+*.ps1
+
+# Build artefacts
+dist/
+build/
+packaging/
+updater/
+
+# Large dev/output folders
+downloads/
+tmp/
+temp_download/
+temp_manifest/
+scripts/
+docs/
+
+# Secrets / certs that must NOT go into the image
+.env
+*.env
+manifest.hmac
+manifest.signed.json
+
+# Data (mounted as a Fly volume at runtime)
+data/

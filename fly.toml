@@ -1,0 +1,51 @@
+# fly.toml app configuration file generated for movie-project-backend on 2026-03-06T12:39:18+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'movie-project-backend'
+primary_region = 'ord'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  DATA_DIR = '/app/data'
+  DOWNLOAD_PATH = '/app/downloads'
+  FLASK_DEBUG = 'false'
+  FLASK_HOST = '0.0.0.0'
+  FLASK_PORT = '5000'
+
+[[mounts]]
+  source = 'movie_data'
+  destination = '/app/data'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 5000
+
+  [[services.ports]]
+    port = 80
+    handlers = ['http']
+
+  [[services.ports]]
+    port = 443
+    handlers = ['tls', 'http']
+
+  [services.concurrency]
+    type = 'connections'
+    hard_limit = 50
+    soft_limit = 35
+
+  [[services.http_checks]]
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/api/health'
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 512
